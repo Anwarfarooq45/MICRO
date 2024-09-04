@@ -1,0 +1,24 @@
+body{
+  background-image: url("bg.jpg");
+  background-position: cover;
+}
+.navbar{
+  color: aliceblue;
+  background-color: rgb(16, 17, 67);
+  display: inline-block;
+}
+li{
+  display: inline-block;
+  position: relative;
+  padding-right: 30px;
+  flex: 1;
+}
+li:hover{
+  color : white;
+}
+a{
+  text-decoration: none;
+}
+.logo{
+  border-radius: 50%;
+}

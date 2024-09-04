@@ -1,0 +1,28 @@
+body{
+  background-image: url("bg.jpg");
+  background-position: cover;
+}
+.tb{
+  margin-top: 30px;
+  color: red;
+}
+.navbar{
+  color: aliceblue;
+  background-color: rgb(16, 17, 67);
+  display: inline-block;
+}
+li{
+  display: inline-block;
+  position: relative;
+  padding-right: 30px;
+  flex: 1;
+}
+li:hover{
+  color : white;
+}
+a{
+  text-decoration: none;
+}
+.logo{
+  border-radius: 50%;
+}
