@@ -1,0 +1,12 @@
+.container{
+  max-height: 100%;
+  width: 100%;
+  align-items: center;
+  padding-top: 250px ;
+  padding-left: 800px;
+  text-align: center;
+}
+button{
+  width: 150px;
+  height: 100px;
+}

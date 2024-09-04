@@ -14,7 +14,7 @@ body {
   align-items: center;
   text-align: center;
   width: 100%;
-  padding-top: 20%;
+  padding-top: 150px;
 }
 button{
   color: aliceblue;
@@ -29,7 +29,7 @@ button{
   box-shadow: 5px;
   z-index: 1;
 }
-button:hover{
+button:hover,a:hover{
   background-color: rgb(61, 26, 26);
   cursor: pointer;
   

@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Display Data</title>
-  <link rel="stylesheet" href="style_displayMunnar.css">
-  <link rel="stylesheet" href="style_navbarPrint.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="style_displayCustomer.css">-->
+  <link rel="stylesheet" href="style_navbar.css">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
 </head>
 <body>
-<div class="navbar">
+<div class="banner">
+<div class="navbar1">
             <a href="#"><img class="logo" src="logo.jpg" loading="lazy"  width="60px" height="60px"></a>
             <ul>
                 <li><a href="home.php">Home</a></li>
@@ -18,18 +19,17 @@
                 <li><a href="#">Weighing Machine</a></li>
                 <li><a href="select-taluk.php">Area Wise</a></li>
             </ul>
-        </div>
-</div>
+  </div>
   <?php
   //include("fetchDataMunnar.php");
 include("database.php");
 $db= $conn;
-$taluk=$conn->real_escape_string($_POST['taluk']);
-$quarter=$conn->real_escape_string($_POST['quarter']);
+$quarter=$conn->real_escape_string($_GET['quarter']);
+$taluk=$conn->real_escape_string($_GET['taluk']);
 $tableName="customer";
 $columns= ['id','c_name','shop_name','c_address','c_phone','c_taluk','c_date','machine_model','sl_no','nextStampQuarter'];
-$fetchData = fetch_data($db, $tableName, $columns,$taluk,$quarter);
-function fetch_data($db, $tableName, $columns,$taluk,$quarter){
+$fetchData = fetch_data($db, $tableName, $columns,$quarter,$taluk);
+function fetch_data($db, $tableName, $columns,$quarter,$taluk){
  if(empty($db)){
   $msg= "Database connection error";
  }elseif (empty($columns) || !is_array($columns)) {
@@ -38,8 +38,7 @@ function fetch_data($db, $tableName, $columns,$taluk,$quarter){
    $msg= "Table Name is empty";
 }else{
 $columnName = implode(", ", $columns);
-//$query = "SELECT ".$columnName." FROM ".$tableName." WHERE c_taluk='munnar' AND nextStampQuarter='D25' ";
-$query = "SELECT ".$columnName." FROM ".$tableName." WHERE c_taluk='".$taluk."' AND nextStampQuarter LIKE'".$quarter."%' ORDER BY c_date ";
+  $query = "SELECT ".$columnName." FROM ".$tableName." WHERE c_taluk='".$taluk."' AND nextStampQuarter LIKE'".$quarter."%' ";
 
 $result = $db->query($query);
 if($result== true){ 
@@ -107,17 +106,10 @@ return $msg;
     }?>
     </tbody>
      </table>
-     <button class="printBtn">print</button>
    </div>
 </div>
 </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.3/jspdf.plugin.autotable.js"></script>
-<script>
-  const printBtn = document.querySelector('.printBtn');
-  printBtn.addEventListener("click", () => {
-    print();
-  })
-</script>
+  </div>
 </body>
 </html>
