@@ -13,6 +13,15 @@
   $field7 = $conn->real_escape_string($_POST['model']);
   $field8 = $conn->real_escape_string($_POST['sl_no']);
   $field9 = $conn->real_escape_string($_POST['quarter']);
+  
+  $duplicate = "SELECT * FROM customer WHERE sl_no = '$field8'";
+  $result = $conn->query($duplicate);
+  if($result->num_rows > 0){
+    echo "<script>
+  alert('Sl no already exist. Please enter new sl no..');
+  window.location.href='customer.php';
+  </script>";
+  }else{
 
   $query = "INSERT INTO customer (c_name,shop_name,c_address,c_phone,c_taluk,c_date,machine_model,sl_no,nextStampQuarter) VALUES ('{$field1}','{$field2}','{$field3}','{$field4}','{$field5}','{$field6}','{$field7}','{$field8}','{$field9}')";
 
@@ -22,4 +31,5 @@
   alert('Customer details added successfully');
   window.location.href='customer.php';
   </script>";
+  }
   ?>

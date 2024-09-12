@@ -15,13 +15,14 @@
                 <li><a href="home.php">Home</a></li>
                 <li><a href="displayCustomer.php">Customer</a></li>
                 <li><a href="stampList.php">Stamp list</a></li>
-                <li><a href="#">Weighing Machine</a></li>
+                <li><a href="customer.php">Add customer</a></li>
                 <li><a href="select-taluk.php">Area Wise</a></li>
             </ul>
 </div>
   <div class="container">
     <a href="stampListMunnar.php"><button class="btn btn-primary btn-lg">Munnar</button></a>
     <a href="stampListKattapana.php"><button class="btn btn-primary btn-lg">Kattapana</button></a>
+    <a href="stampListPerumbavoor.php"><button class="btn btn-primary btn-lg">Perumbavoor</button></a>
   </div>
 </body>
 </html>

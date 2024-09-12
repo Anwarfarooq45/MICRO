@@ -6,7 +6,13 @@
   <title>Display Data</title>
   <!--<link rel="stylesheet" href="style_displayCustomer.css">-->
   <link rel="stylesheet" href="style_navbar.css">
+  <link rel="stylesheet" href="style_table.css">
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+  <style>
+    table{
+      overflow-x:auto;
+    }
+  </style>
 </head>
 <body>
 <div class="banner">
@@ -16,7 +22,7 @@
                 <li><a href="home.php">Home</a></li>
                 <li><a href="displayCustomer.php">Customer</a></li>
                 <li><a href="stampList.php">Stamp list</a></li>
-                <li><a href="#">Weighing Machine</a></li>
+                <li><a href="customer.php">Add customer</a></li>
                 <li><a href="select-taluk.php">Area Wise</a></li>
             </ul>
   </div>
@@ -60,12 +66,12 @@
    <div class="">
     <?php echo $deleteMsg??''; ?>
     <div class="table-responsive">
-      <table class="table table-bordered table-success ">
+      <table style="overflow-x:auto">
        <thead class="thead-dark">
         <tr>
          <th scope="col">S.N</th>
          <th scope="col">Full Name</th>
-         <th scope="col">Shope name</th>
+         <th scope="col">Shop name</th>
          <th scope="col">Address</th>
          <th scope="col">Mobile Number</th>
          <th scope="col">Taluk</th>
@@ -74,7 +80,9 @@
          <th scope="col">Serial Number</th>
          <th scope="col">Stamping Quarter</th>
          <!--<th scope="col">Call</th>-->
-         <th scope="col">delete</th></tr>
+         <th scope="col">delete</th>
+         <th scope="col">Edit</th>
+        </tr>
 
     </thead>
     <tbody>
@@ -84,18 +92,20 @@
       foreach($fetchData as $data){
     ?>
       <tr>
-      <td><?php echo $sn; ?></td>
-      <td><?php echo $data['c_name']??''; ?></td>
-      <td><?php echo $data['shop_name']??''; ?></td>
-      <td><?php echo $data['c_address']??''; ?></td>
-      <td><?php echo $data['c_phone']??''; ?></td>
-      <td><?php echo $data['c_taluk']??''; ?></td>
-      <td><?php echo $data['c_date']??''; ?></td>
-      <td><?php echo $data['machine_model']??''; ?></td>  
-      <td><?php echo $data['sl_no']??''; ?></td>  
-      <td><?php echo $data['nextStampQuarter']??''; ?></td> 
-      <!--<td><form action="tel:<?php echo $data['c_phone']??'';?> "><button>Call</button></form></td>-->
-      <td><a href="deleteCustomer.php?ID=<?php echo $data['sl_no'] ?>"><i class="glyphicon glyphicon-trash">delete</i></a></td>
+      <td data-label="Id"><?php echo $sn; ?></td>
+      <td data-label="Name"><?php echo $data['c_name']??''; ?></td>
+      <td data-label="Shop name"><?php echo $data['shop_name']??''; ?></td>
+      <td data-label="Address"><?php echo $data['c_address']??''; ?></td>
+      <td data-label="Phone"><?php echo $data['c_phone']??''; ?></td>
+      <td data-label="Section"><?php echo $data['c_taluk']??''; ?></td>
+      <td data-label="Purchace date"><?php echo $data['c_date']??''; ?></td>
+      <td data-label="Machine model"><?php echo $data['machine_model']??''; ?></td>  
+      <td data-label="Sl no"><?php echo $data['sl_no']??''; ?></td>  
+      <td data-label="Next stamp quarter"><?php echo $data['nextStampQuarter']??''; ?></td> 
+      <!--<td data-label="Call"><a href="tel:<?php $phone=$data['c_phone']; echo $phone; ?>"><button>Call</button></a></td>  -->
+      <td data-label="Delete"><a href="deleteCustomer.php?ID=<?php echo $data['sl_no'] ?>"><i class="glyphicon glyphicon-trash">delete</i></a></td>
+      <td data-label="Edit"><a href="Customer_editForm.php?ID=<?php echo $data['sl_no'] ?>"><i class="glyphicon glyphicon-edit">Edit</i></a></td>
+
 
      </tr>
      <?php

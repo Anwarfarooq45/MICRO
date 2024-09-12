@@ -1,6 +1,7 @@
 body{
   background-image: url("bg.jpg");
   background-position: cover;
+  background-repeat: no-repeat;
 }
 .tb{
   margin-top: 30px;

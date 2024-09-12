@@ -13,12 +13,12 @@
         <!-- Personal Details Form -->
         <form id="personalDetailsForm" action="addCustomer.php" method="post" >
             <div class="form-group">
-                <label for="firstName">First Name:</label>
+                <label for="firstName">Full Name:</label>
                 <input type="text" id="firstName" name="name" required>
             </div>
             <div class="form-group">
                 <label for="shopName">Shop Name:</label>
-                <input type="text" id="shopName" name="shopName" required>
+                <input type="text" id="shopName" name="shopName" >
             </div>
             <div class="form-group">
               <label for="address">Address:</label>
@@ -26,16 +26,17 @@
           </div>
             <div class="form-group">
                 <label for="phoneNumber">Phone Number:</label>
-                <input type="text" id="phoneNumber" name="phoneNumber" required>
+                <input type="text" id="phoneNumber" name="phoneNumber">
             </div>
             <div class="form-group">
               <label for="taluk">Taluk:</label>
-              <input type="text" name="taluk">
-              <!--<select name="taluk">
-                <option value="" >Please select taluk from the list</option>
-                <option value="munnar" required>Munnar</option>
-                <option value="kattappana" required>Kattappana</option>
-              </select> -->
+              <!--<input type="text" name="taluk">-->
+              <select name="taluk" required>
+                  <option value="#">Please select Area</option>
+                  <option value="Kattappana">Kattappana</option>
+                  <option value="Munnar">Munnar</option>
+                  <option value="Perumbavoor">Perumbavoor</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="date">Purchase Date:</label>
@@ -43,7 +44,7 @@
             </div>
             <div class="form-group">
               <label for="model">Machine Model:</label>
-              <input type="text" id="model" name="model" required>
+              <input type="text" id="model" name="model" >
             </div>
             <div class="form-group">
               <label for="sl_no">Serial Number:</label>
@@ -51,13 +52,14 @@
             </div>
             <div class="form-group">
               <label for="nextQuarter">Next Stamping Quarter:</label>
-              <input type="text" name="quarter"><!--<select name="quarter">
-                <option value="" >Please select quarter from the list</option>
-                <option value="A25" >A/25</option>
-                <option value="B25" >B/25</option>
-                <option value="C25" >C/25</option>
-                <option value="D25" >D/25</option>
-              </select> -->
+              <!--<input type="text" name="quarter">-->
+              <select name="quarter" required>
+                  <option value="#">Please select Quarter</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+              </select>
             </div>
             <div class="form-group">
               <input class="back-button" type="submit"  name="submit">

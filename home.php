@@ -1,12 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="website1" content="This is the first practice html+css website">
     <link rel="stylesheet" href="style_home.css">
     <title>MICRO</title>
+    
+
 </head>
 <body>
     <div class="banner">
@@ -21,11 +23,14 @@
             </ul>
         </div>
         <div class="content">
-            <h1>MICRO WEIGH EQUIPMENTS</h1>
+            <div class="container">
+                <h1>MICRO WEIGH EQUIPMENTS</h1>
+            
+            </div>
             <p><h2>Weighing machine <br> Sales & Service</h2> </p>
             <div>
-                <button type="button" onclick="window.location.href = 'customer.php';"><span></span>Add Customer</button>
-                <button type="button" onclick="window.location.href = 'select-taluk.php';"> <span></span>Stamping List</button>
+                <button type="button" onclick="window.location.href = 'customer.php';"><span></span><h3>Add Customer</h3></button>
+                <button type="button" onclick="window.location.href = 'select-taluk.php';"> <span></span><h3>Stamping List</h3></button>
             </div>
         </div>
     </div>

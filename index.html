@@ -2,32 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="website1" content="This is the first practice html+css website">
-    <link rel="stylesheet" href="style_home.css">
-    <title>MICRO</title>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style_login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
-    <div class="banner">
-        <div class="navebar">
-            <a href="#"><img class="logo" src="logo.jpg" loading="lazy"  width="60px" height="60px"></a>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="displayCustomer.php">Customer</a></li>
-                <li><a href="stampList.php">Stamp list</a></li>
-                <li><a href="#">Weighing Machine</a></li>
-                <li><a href="select-taluk.php">Area Wise</a></li>
-            </ul>
-        </div>
-        <div class="content">
-            <h1>MICRO WEIGH EQUIPMENTS</h1>
-            <p><h2>Weighing machine <br> Sales & Service</h2> </p>
-            <div>
-                <button type="button" onclick="window.location.href = 'customer.php';"><span></span>Add Customer</button>
-                <button type="button" onclick="window.location.href = 'select-taluk.php';"> <span></span>Stamping List</button>
+    
+    <div class="wrapper">
+        <form action="loginCheck.php" method="post">
+
+            <h1>Login</h1>
+
+            <div class="input-box">
+                <input type="text" name="user" placeholder="Username">
+                <i class='bx bxs-user'></i>
             </div>
-        </div>
+
+            <div class="input-box">
+                <input type="password" name="pass" placeholder="Password">
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+
+            <button type="submit" class="btn" name="login">Login</button>
+        </form>
+
     </div>
+
 </body>
 </html>

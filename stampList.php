@@ -15,7 +15,7 @@
                 <li><a href="home.php">Home</a></li>
                 <li><a href="displayCustomer.php">Customer</a></li>
                 <li><a href="stampList.php">Stamp list</a></li>
-                <li><a href="#">Weighing Machine</a></li>
+                <li><a href="customer.php">Add customer</a></li>
                 <li><a href="select-taluk.php">Area Wise</a></li>
             </ul>
         </div>
@@ -29,6 +29,7 @@
       <option value="#">Please select Area</option>
       <option value="Kattappana">kattappana</option>
       <option value="Munnar">munnar</option>
+      <option value="Perumbavoor">Perumbavoor</option>
   </select>
   <select name="quarter" required>
       <option value="#">Please select Quarter</option>

@@ -6,20 +6,11 @@
   <title>Display Data</title>
   <!--<link rel="stylesheet" href="style_displayCustomer.css">-->
   <link rel="stylesheet" href="style_navbar.css">
+  <link rel="stylesheet" href="style_table.css">
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
 </head>
 <body>
 <div class="banner">
-<div class="navbar1">
-            <a href="#"><img class="logo" src="logo.jpg" loading="lazy"  width="60px" height="60px"></a>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="displayCustomer.php">Customer</a></li>
-                <li><a href="stampList.php">Stamp list</a></li>
-                <li><a href="#">Weighing Machine</a></li>
-                <li><a href="select-taluk.php">Area Wise</a></li>
-            </ul>
-  </div>
   <?php
   //include("fetchDataMunnar.php");
 include("database.php");
@@ -83,17 +74,17 @@ return $msg;
       foreach($fetchData as $data){
     ?>
       <tr>
-      <td><?php echo $sn; ?></td>
-      <td><?php echo $data['c_name']??''; ?></td>
-      <td><?php echo $data['shop_name']??''; ?></td>
-      <td><?php echo $data['c_address']??''; ?></td>
-      <td><?php echo $data['c_phone']??''; ?></td>
-      <td><?php echo $data['c_taluk']??''; ?></td>
-      <td><?php echo $data['c_date']??''; ?></td>
-      <td><?php echo $data['machine_model']??''; ?></td>  
-      <td><?php echo $data['sl_no']??''; ?></td>  
-      <td><?php echo $data['nextStampQuarter']??''; ?></td> 
-      <td><form action="tel:<?php echo $data['c_phone']??'';?> "><button>Call</button></form></td> 
+      <td data-label="Id"><?php echo $sn; ?></td>
+      <td data-label="Name"><?php echo $data['c_name']??''; ?></td>
+      <td data-label="Shop name"><?php echo $data['shop_name']??''; ?></td>
+      <td data-label="Address"><?php echo $data['c_address']??''; ?></td>
+      <td data-label="Phone"><?php echo $data['c_phone']??''; ?></td>
+      <td data-label="Section"><?php echo $data['c_taluk']??''; ?></td>
+      <td data-label="Purchace date"><?php echo $data['c_date']??''; ?></td>
+      <td data-label="Machine model"><?php echo $data['machine_model']??''; ?></td>  
+      <td data-label="Sl no"><?php echo $data['sl_no']??''; ?></td>  
+      <td data-label="Next stamp quarter"><?php echo $data['nextStampQuarter']??''; ?></td>  
+      <td data-label="Call"><a href="tel:<?php $phone=$data['c_phone']; echo $phone; ?>"><button>Call</button></a></td>  
      </tr>
      <?php
       $sn++;}}else{ ?>
@@ -106,10 +97,23 @@ return $msg;
     }?>
     </tbody>
      </table>
+     <button class="printBtn">Print</button>
+     <button id="backBtn">Back</button>
+
    </div>
 </div>
 </div>
 </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.3/jspdf.plugin.autotable.js"></script>
+<script>
+  const printBtn = document.querySelector('.printBtn');
+  printBtn.addEventListener("click", () => {
+    print();
+  })
+  document.getElementById("backBtn").onclick = function () {
+          location.href = "select-taluk.php";
+      };
+</script>
 </body>
 </html>
